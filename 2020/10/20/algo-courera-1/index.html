@@ -20,17 +20,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="MingYu Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ymkzpx">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="介绍了常见的尾概率不等式，为 Morris算法 误差分析 提供理论上下界。 Morris算法用途是近似算法，压缩存储空间，而作的一种取舍。具体做法是用 $\log_2^n$ 近似代替 $n$，而表示 $\log_2^n$ 只需要 $\log_2^{log_2^n}$ 位。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Algorithm Courera1 尾概率不等式和Morris算法">
+<meta property="og:url" content="http://example.com/2020/10/20/algo-courera-1/index.html">
 <meta property="og:site_name" content="ymkzpx">
-<meta property="og:description" content="MingYu Blog">
+<meta property="og:description" content="介绍了常见的尾概率不等式，为 Morris算法 误差分析 提供理论上下界。 Morris算法用途是近似算法，压缩存储空间，而作的一种取舍。具体做法是用 $\log_2^n$ 近似代替 $n$，而表示 $\log_2^n$ 只需要 $\log_2^{log_2^n}$ 位。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gjvjl9apkbj3144062abw.jpg">
+<meta property="article:published_time" content="2020-10-20T00:40:52.000Z">
+<meta property="article:modified_time" content="2020-10-20T05:53:33.611Z">
 <meta property="article:author" content="ymkzpx">
+<meta property="article:tag" content="Courera">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Math">
+<meta property="article:tag" content="Hash">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/007S8ZIlly1gjvjl9apkbj3144062abw.jpg">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2020/10/20/algo-courera-1/">
 
 
 <script id="page-configurations">
@@ -38,12 +46,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | ymkzpx</title>
+  <title>Algorithm Courera1 尾概率不等式和Morris算法 | ymkzpx</title>
   
 
 
@@ -157,230 +165,97 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 10 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/20/algo-courera-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ymkzpx">
+      <meta itemprop="description" content="MingYu Blog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ymkzpx">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Algorithm Courera1 尾概率不等式和Morris算法
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-10-20 08:40:52 / Modified: 13:53:33" itemprop="dateCreated datePublished" datetime="2020-10-20T08:40:52+08:00">2020-10-20</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <p>介绍了常见的尾概率不等式，为 Morris算法 误差分析 提供理论上下界。</p>
+<p>Morris算法用途是近似算法，压缩存储空间，而作的一种取舍。具体做法是用 $\log_2^n$ 近似代替 $n$，而表示 $\log_2^n$ 只需要 $\log_2^{log_2^n}$ 位。</p>
+<a id="more"></a>
+
+<h1 id="Markov不等式"><a href="#Markov不等式" class="headerlink" title="Markov不等式"></a>Markov不等式</h1><h1 id="Chebyshev不等式"><a href="#Chebyshev不等式" class="headerlink" title="Chebyshev不等式"></a>Chebyshev不等式</h1><h1 id="Chernoff不等式"><a href="#Chernoff不等式" class="headerlink" title="Chernoff不等式"></a>Chernoff不等式</h1><h1 id="Morris算法"><a href="#Morris算法" class="headerlink" title="Morris算法"></a>Morris算法</h1><p>近似空间算法。</p>
+<p>其思想是 用 $\log_2^n$ 近似代替 $n$，而表示 $\log_2^n$ 只需要 $\log_2^{log_2^n}$ 位。</p>
+<h2 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法:"></a>实现方法:</h2><p>一个无尽的循环流，有一初始为 $x=0$  的变量，其有 $\frac{1}{2^x}$ 的概率将 $x$ -&gt; $x+1$。</p>
+<p> 不难发现，对于任意 x，期望最少次数需要 $1+2+4+….+2^{x-1}$ 次才能将其更新为 $x$ 。</p>
+<p> 即 设 $N = 2^x - 1$，在这个算法中可用 $x$，近似表示 $N=2^x-1$。 </p>
+<p>便实现了算法目的。 </p>
+<h2 id="误差分析"><a href="#误差分析" class="headerlink" title="误差分析"></a>误差分析</h2><p>$Var(2^x - 1) =\frac{1}{2} x^2$</p>
+<h1 id="Morris-算法"><a href="#Morris-算法" class="headerlink" title="Morris+算法"></a>Morris+算法</h1><p>运行 $k$ 次 Morris算法 取平均数。</p>
+<h1 id="Morris-算法-1"><a href="#Morris-算法-1" class="headerlink" title="Morris++算法"></a>Morris++算法</h1><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjvjl9apkbj3144062abw.jpg" alt="image-20201020092913027" style="zoom: 50%;" />
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T09:31:08+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Courera/" rel="tag"># Courera</a>
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Math/" rel="tag"># Math</a>
+              <a href="/tags/Hash/" rel="tag"># Hash</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/algo-courera-2/" itemprop="url">
-            <span itemprop="name">Algorithm Courera2 哈希技术</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T09:31:08+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/openGuess%E8%AF%BB%E5%86%99%E7%BC%93%E5%86%B2%E5%8C%BA/" itemprop="url">
-            <span itemprop="name">华为CCF2020</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T09:31:08+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/postgresql%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93%E9%9B%86%E7%BE%A4%E3%80%81%E6%95%B0%E6%8D%AE%E5%BA%93%E5%92%8C%E8%A1%A8/" itemprop="url">
-            <span itemprop="name">PostgreSQL 第一章 数据库集群、数据库和表</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T09:31:08+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/postgresql%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%92%8C%E5%86%85%E5%AD%98%E6%9E%B6%E6%9E%84/" itemprop="url">
-            <span itemprop="name">PostgreSQL 第二章 进程和内存架构</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T09:31:08+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/" itemprop="url">
-            <span itemprop="name">并发控制</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-20T08:40:52+08:00"
-              content="2020-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/20/algo-courera-1/" itemprop="url">
-            <span itemprop="name">Algorithm Courera1 尾概率不等式和Morris算法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-18T20:00:00+08:00"
-              content="2020-10-18">
-          10-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/18/writing-guidelines/" itemprop="url">
-            <span itemprop="name">Writing Guidelines</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-18T16:12:39+08:00"
-              content="2020-10-18">
-          10-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/18/managing-non-volatile-memory-in-databas-systems/" itemprop="url">
-            <span itemprop="name">Managing-Non-Volatile-Memory-in-Databas-Systems</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-18T11:24:49+08:00"
-              content="2020-10-18">
-          10-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/18/firstBlog/" itemprop="url">
-            <span itemprop="name">新的开始</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-18T11:15:16+08:00"
-              content="2020-10-18">
-          10-18
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/18/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        
 
 
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/18/writing-guidelines/" rel="prev" title="Writing Guidelines">
+      <i class="fa fa-chevron-left"></i> Writing Guidelines
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/10/20/%E5%B9%B6%E5%8F%91%E6%8E%A7%E5%88%B6/" rel="next" title="并发控制">
+      并发控制 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -433,6 +308,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Markov%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">Markov不等式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chebyshev%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">Chebyshev不等式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chernoff%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">3.</span> <span class="nav-text">Chernoff不等式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Morris%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">Morris算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">实现方法:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="nav-number">4.2.</span> <span class="nav-text">误差分析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Morris-%E7%AE%97%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">Morris+算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Morris-%E7%AE%97%E6%B3%95-1"><span class="nav-number">6.</span> <span class="nav-text">Morris++算法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
